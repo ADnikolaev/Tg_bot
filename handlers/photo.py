@@ -15,8 +15,8 @@ async def photo_handler(message: Message)  -> None:
 @router.message(F.photo)
 async def photoshop(message: Message)  -> None:
     photo_data = message.photo[-1]
-    frame = Frame(photo_data.file_id)
-    frame.frame()
+    #Сделай более понятные названия методов. Типа create_frame
+    frame_path = Frame(photo_data.file_id).frame()
     await message.answer("Вот ваша фотография")
-    await message.answer_photo(FSInputFile(f'photos/{frame.img_name}.png'), reply_markup = get_menu_kb()) 
+    await message.answer_photo(FSInputFile(frame_path), reply_markup = get_menu_kb()) 
 #    await message.answer(reply_markup = ReplyKeyboardRemove())
