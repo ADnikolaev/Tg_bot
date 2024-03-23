@@ -39,7 +39,7 @@ class Weather:
         """Всю информацию из ответа апи погоды лучше сделать в одном месте"""
         weather_data = self.__http_get(self.url)
         temperature = round(weather_data['main']['temp'])
-        temperature_feels = round(self.weather_data['main']['feels_like'])
+        temperature_feels = round(weather_data['main']['feels_like'])
         if temperature > 0:
             temperature = f'+{temperature}'
         if temperature_feels > 0:
