@@ -43,7 +43,7 @@ class Weather:
         if temperature > 0:
             temperature = f'+{temperature}'
         if temperature_feels > 0:
-            return f'+{temperature}'
+            temperature_feels = f'+{temperature}'
         return str(temperature), str(temperature_feels)
 
     # Нафиг его вообще
