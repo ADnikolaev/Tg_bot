@@ -28,7 +28,7 @@ class Frame:
         img = requests.get(config.uri.replace('BOT_TOKEN', config.bot_token.get_secret_value()) + img_path)
         return img.content
 
-    def __img_save(self, img) -> None:
+    def __img_save(self, img) -> str:
         # if not os.path.exists('photos'):
         #     os.mkdir('photos')
         # img.save(f'photos/{self.img_name}.png', format="PNG")
@@ -45,7 +45,7 @@ class Frame:
         img.save(img_path, format="PNG")
         return img_path
 
-    def frame(self) -> None:
+    def frame(self) -> str:
         img = self.__get_image()
         img_path = self.__img_save(img)
         return img_path

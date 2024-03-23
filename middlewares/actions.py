@@ -26,6 +26,10 @@ class SaveMessageInLogMiddleware(BaseMiddleware):
             return await handler(event, data)
 
 class IsItCityMiddleware(BaseMiddleware):
+    """
+    я считаю что это лишнее. Ты делаешь два запроса для одного и того же действия
+    Вместо мидлвари лучше обрабатывай эксепшн WeatherException, который я дописал
+    """
 
     async def __call__(
         self,
